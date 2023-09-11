@@ -1,0 +1,36 @@
+.page {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-image: url('../img/dog-animals-mammals-2199927-wallhere.com.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+ 
+};
+
+.contenGarra {
+    margin: 10px; 
+  }
+  
+  .landigPageLink {
+    backdrop-filter: blur(8px);
+    margin-right: 10rem;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+  }
+  
+  .landigPageLink:hover {
+    transform: scale(1.1);
+  }
+  
+  .lagarra {
+    width: 20vh; 
+    height: 20vh; 
+  }
+  .contenGarra h3{
+    margin-left: -10rem;
+    color: rgb(5, 5, 5);
+  }

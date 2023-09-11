@@ -1,0 +1,99 @@
+.boxheader {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.5)), url('../img/534645.jpg');  
+    background-size: cover;
+    background-position: center;
+    height: 73vh;
+    width: 100%;
+  }
+   
+  .minbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+    text-align: center; /* Centra el contenido de manera horizontal */
+    padding-left:30px;
+    padding-right:30px;
+    border: 1px solid #dddcdc; /* Añade un borde para visualización */
+    border-radius: 10px;
+    width: 60rem;
+    max-width: 80%; /* Limita el ancho máximo para hacerlo responsive */
+    background-color:rgba(255, 255, 255, 0.8);
+    min-height: 58px;
+    max-height: 150px;
+    position: fixed;
+    z-index: 2;
+  }
+
+  .buttonHeader{
+    border:1px solid #b8b7b7;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #cfcfcf2a;
+    padding: 10px 26px 10px 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   outline: none;
+  }
+
+  .inputHeader{
+    border:1px solid #b8b7b7;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #cfcfcf;
+    outline: none;
+    padding: 10px 6px 10px 6px;
+    color: #000000;
+  }
+.contenbutton{
+ display: flex;
+}
+  /* style for select */
+ .headerDropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+  }
+  label {
+    background-color: #3498db00;
+    font-size: 1rem;
+    color: rgb(109, 105, 105);
+    padding: 5px 5px;
+  }
+
+  .dropdown-contenHeader {
+    margin-top: 30px;
+    padding:15px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #f9f9f9d3;
+    max-width: 70px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-contenHeader li {
+    margin-left: -10px;
+    margin-right: 10px;
+    list-style: none;
+    padding: 5px;
+  }
+  .dropdown-contenHeader li:hover {
+    width: 80px;
+    background-color: #c2c0c0;
+    border-radius: 6px;
+  }
+  .newBreeds{
+    color: #fdfdfd;
+    font-size: 0.8rem;
+    border:1px solid #b8b7b7;
+    border-radius: 8px;
+    background-color: #42b3f5fd;
+    padding: 8px 16px 8px 16px;
+    margin-bottom: 5px;
+   outline: none;
+  };

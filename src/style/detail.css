@@ -1,0 +1,42 @@
+.box-detail{
+    background-image: url('../img/istockphoto-1388281684-1024x1024.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+}
+.mini-detail{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    min-height: 80vh;
+   background-color:rgba(255, 255, 255, 0.959);
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.425);
+};
+
+.text-detail{
+   width: 20rem;
+}
+/* Estilos para la etiqueta "Nombre" */
+.nombre-titulo {
+    font-size: 34px; /* Tamaño de fuente más grande para el título */
+    font-weight: bold; /* Texto en negrita */
+    font-family: Pacifico,cursive; /* Cambia 'Tu fuente personalizada' por la fuente deseada */
+    margin-bottom: 10px; /* Espacio inferior para separar de los elementos siguientes */
+  }
+  
+  /* Estilos para las demás etiquetas */
+  .etiqueta-pequena {
+    font-size: 20px; /* Tamaño de fuente más pequeño para las etiquetas pequeñas */
+    margin-right: 10px; /* Espacio derecho para separar de los valores correspondientes */
+    font-family: Pacifico,cursive; /* Cambia 'Tu fuente personalizada' por la fuente deseada */
+  }
+    

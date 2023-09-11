@@ -1,0 +1,81 @@
+.boxbody{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.minbody{
+    background-image: url('../img/14710.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #dddcdc; /* Añade un borde para visualización */
+    border-radius: 10px;
+    width: 80rem;
+    max-width: 96%; /* Limita el ancho máximo para hacerlo responsive */
+    background-color: #e7e7e7;
+    min-height: 80vh;
+    margin-top: -4rem;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.425);
+}
+
+.boxnext{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+.buttonNext{
+    background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al hacer clic */
+  cursor: pointer; /* Cursor de tipo puntero al pasar el ratón */
+  padding: 10px; /* Sin relleno */
+  margin: 0; /* Sin margen */
+  color: rgb(105, 104, 104);
+  font-size: 1rem;
+  margin-right: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.425);
+  border-radius: 8px;
+}
+.buttonNext:hover{
+    transform: scale(1.2);
+}
+
+.continer-box-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
+.continer-box-card:nth-child(3n) {
+    margin-right: 0;
+  }
+.box-card{
+    margin: 1.5rem;
+    max-width: 20rem;
+    border-radius: 15px;
+}
+.box-card:hover .texto{
+   opacity: 1;
+   color: black;
+   background-color: black;
+}
+.box-card:hover .boxImg{
+ opacity: 0.2;
+}
+
+.boxImg{
+    opacity: 1;
+    width: 20rem;
+    height: 22rem;
+    border-radius: 15px;
+}
+
+.pag{
+    color: rgba(12, 12, 12, 0.623);
+    margin-right: 30px;
+    padding: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.425);
+    border-radius: 8px;
+};
