@@ -56,7 +56,7 @@ function Body() {
                     {!!(datavisible().length) && datavisible().map(i => {
                         if (!(typeof i === 'string')) {
                             return (
-                                <Link className='cardLink' key={i.id} to={`/detail/${i.id}`}><div className='box-card' key={i.id} >
+                                <Link className='cardLink' key={i.id} to={`/detail/${i.id}`}><div className='box-card'  >
                                     <img className='boxImg' src={i.reference_image_id} alt='esfdf' />
 
                                     <div className='texto' style={{
@@ -66,7 +66,7 @@ function Body() {
                                         display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center'
                                     }}>
                                         <h1 style={{fontFamily: 'Pacifico,cursive'}}>{i.name}</h1>
-                                        <p>temperament:{i.temperament}<br />weight:{i.weight}</p>
+                                        <p>temperament:{i.temperament}<br />weight:{i.weight} kg</p>
                                     </div>
 
                                 </div></Link>

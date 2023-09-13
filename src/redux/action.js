@@ -44,7 +44,6 @@ export const searchInput = (name) => {
         try {
             const data = await fetch(`http://localhost:3001/dogs/name?name=${name}`);
             const result = await data.json();
-            console.log(result)
             dispatch({ type: SEARCH_INPUT, payload: result });
         } catch (error) {
             console.log({ error: error.message });
@@ -98,7 +97,7 @@ export const newBeeds = (obj) => {
              console.error({error: error.message});
         }
 
-    }
+    } 
 };
 
     // const data = await fetch(`http://localhost:3001/temperaments`,{

@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newBeeds } from "../redux/action";
 import {useNavigate} from 'react-router-dom';
+import InputField from './InputField';
+import SelectField from './SelectField';
+
 
 function Formulario() {
     const navigate = useNavigate();
@@ -94,8 +97,8 @@ function Formulario() {
 
             return
         };
-   
         dispatch(newBeeds(newData));
+        console.log(form.mensaje)
         if(form.mensaje){
             navigate('/home');
         }
@@ -111,48 +114,52 @@ function Formulario() {
         }
 
     }, [dataFom]); 
-
+console.log(tempSelect)
     return (
-        <div className='box-form'>
-            <form  onSubmit={HndlreSubmit}>
-                <h1>new breed</h1>
-                <div>
-                    <input className='form-name' name="name" placeholder="name breed" onChange={(e) => handleForm(e)} value={dataFom.name} />
-                    <label >name</label>
-                </div>
-                {error.name && <p>'tiens que ingresar un nombre'</p>}
-                <div>
-                    <input name="height" placeholder="example 2-4" onChange={(e) => handleForm(e)} value={dataFom.height} />
-                    <label>height</label>
-                </div>
-                {error.height && <p>tienes que ingresar una altura valida</p>}
-                <div>
-                    <input name="weight" placeholder="example 2-4" onChange={(e) => handleForm(e)} value={dataFom.weight} />
-                    <label>weight</label>
-                </div>
-                {error.weight && <p>tienes que ingresar un perro valido</p>}
-                <div>
-                    <input name="life_span" placeholder="example 2-4" onChange={(e) => handleForm(e)} value={dataFom.life_span} />
-                    <label>life_span</label>
-                </div>
-                {error.life_span && <p>es neserio ingresar un life_span</p>}
-                <div>
-                    <select multiple onChange={(e) => handlerT(e.target.value)} >
-                        <option value=''>temperament</option>
-                        {seltro.map((item, index) => (
-                            <option key={index} value={`${item.id},${item.name}`}>{item.name}</option>
-                        ))}
-                    </select> <br/>
-                    {error.temperament1 && <p> seleciona almenos un teperamento </p>}
-                    <label>temperaments</label>
-                   <h4>temp select:{tempSelect.join(',')}</h4>
-                </div>
-                <input type="file" onChange={(e)=>fileImg(e.target.files)} /><br/>
-                <button type="submit">submit</button>
-            </form>
-           {form.error && <label>ya existe una raza con es nombre</label>}
+        <div className="box-form">
+          <form onSubmit={HndlreSubmit}>
+            <h1>new breed</h1>
+            <InputField
+              name="name"
+              placeholder="name breed"
+              value={dataFom.name}
+              onChange={handleForm}
+              error={error.name && "Tienes que ingresar un nombre"}
+            />
+            <InputField
+              name="height"
+              placeholder="example 2-4"
+              value={dataFom.height}
+              onChange={handleForm}
+              error={error.height && "Tienes que ingresar una altura válida"}
+            />
+            <InputField
+              name="weight"
+              placeholder="example 2-4"
+              value={dataFom.weight}
+              onChange={handleForm}
+              error={error.weight && "Tienes que ingresar un peso válido"}
+            />
+            <InputField
+              name="life_span"
+              placeholder="example 2-4"
+              value={dataFom.life_span}
+              onChange={handleForm}
+              error={error.life_span && "Es necesario ingresar un life_span"}
+            />
+            <SelectField
+              options={seltro}
+              onChange={(e) => handlerT(e.target.value)}
+              error={error.temperament1}
+            />
+            <h6>{tempSelect}</h6>
+            <input type="file" onChange={(e) => fileImg(e.target.files)} />
+            <br />
+            <button type="submit">submit</button>
+          </form>
+          {form.error && <label>Ya existe una raza con este nombre</label>}
         </div>
-    )
-};
-
-export default Formulario;
+      );
+    }
+    
+    export default Formulario;

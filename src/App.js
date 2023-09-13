@@ -3,7 +3,7 @@ import LandingPage from './landingPage/homePage';
 import {Routes, Route} from 'react-router-dom';
 import Home from './home/Home'
 import Detail from './components/detail';
-import Formulario from './components/formulario';
+import Formulario from './form/formulario';
 import { useSelector } from 'react-redux';
 
 
