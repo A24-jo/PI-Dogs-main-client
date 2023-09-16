@@ -5,7 +5,7 @@ import { AZ, Temeperament, ZA, filtradoApi, filtradoBd, filtradoTeperament, fist
 import Botones from './botones';
 import { Link } from 'react-router-dom';
 import microfono from '../img/microphone-2-svgrepo-com.svg';
-import segundomicrofono from '../img/microphone-svgrepo-com.svg';
+import backgroundImage from '../img/534645.jpg';
 
 function Header() {
     const dispatch = useDispatch();
@@ -66,8 +66,18 @@ function Header() {
             console.error('El navegador no admite la API de reconocimiento de voz.');
         }
     }
+    const boxHeaderStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        /* Centra horizontalmente */
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '73vh',
+        width: '100%',
+      };
     return (
-        <div className='boxheader'>
+        <div style={boxHeaderStyle} >
             <div className='minbox'>
                 <div >
                     <div className={listen ? 'listening' : 'not-listening'} onClick={() => funtio()}>
