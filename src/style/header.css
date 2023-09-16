@@ -1,8 +1,11 @@
 .boxheader {
   display: flex;
   justify-content: center;
-  background-color: #000000;
-  height: 40vh;
+  /* Centra horizontalmente */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.5)), url('../img/534645.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 73vh;
   width: 100%;
 }
 
@@ -22,7 +25,7 @@
   width: 60rem;
   max-width: 80%;
   /* Limita el ancho máximo para hacerlo responsive */
-  background-color: rgba(26, 24, 24, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   min-height: 58px;
   max-height: 150px;
   position: fixed;
