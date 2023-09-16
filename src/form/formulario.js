@@ -1,7 +1,7 @@
 import '../style/formulario.css';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { newBeeds } from "../redux/action";
+import { Temeperament, newBeeds } from "../redux/action";
 import {useNavigate} from 'react-router-dom';
 import InputField from './InputField';
 import SelectField from './SelectField';
@@ -103,10 +103,14 @@ function Formulario() {
             navigate('/home');
         }
     };
+    useEffect(()=>{
+      dispatch(Temeperament())
+    },[]);
     useEffect(() => {
         const regex = /^[A-Za-z]+$/;
         const numer = /^[0-9-]*$/;
         if (dataFom.name.length && !regex.test(dataFom.name)) {
+            setDataFom({...dataFom,name:''})
             alert('ingresa solo letras')
         };
         if ((dataFom.height.length && !numer.test(dataFom.height)) || (dataFom.life_span.length && !numer.test(dataFom.life_span)) || (dataFom.weight.length && !numer.test(dataFom.weight))) {
@@ -114,7 +118,6 @@ function Formulario() {
         }
 
     }, [dataFom]); 
-console.log(tempSelect)
     return (
         <div className="box-form">
           <form onSubmit={HndlreSubmit}>
@@ -152,7 +155,7 @@ console.log(tempSelect)
               onChange={(e) => handlerT(e.target.value)}
               error={error.temperament1}
             />
-            <h6>{tempSelect}</h6>
+          <h6>{tempSelect.map(s=>`${s} ,`)}</h6>
             <input type="file" onChange={(e) => fileImg(e.target.files)} />
             <br />
             <button type="submit">submit</button>

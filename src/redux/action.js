@@ -100,6 +100,7 @@ export const newBeeds = (obj) => {
     } 
 };
 
+
     // const data = await fetch(`http://localhost:3001/temperaments`,{
     //             method:'POST',
     //             body:JSON.stringify({})

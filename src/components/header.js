@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import '../style/header.css';
 import { useEffect, useState } from 'react';
-import { AZ, Temeperament, ZA, filtradoApi, filtradoBd, filtradoTeperament, heavy, light, searchInput } from '../redux/action';
+import { AZ, Temeperament, ZA, filtradoApi, filtradoBd, filtradoTeperament, fistadoDosrasa, heavy, light, searchInput } from '../redux/action';
 import Botones from './botones';
 import { Link } from 'react-router-dom';
 import microfono from '../img/microphone-2-svgrepo-com.svg';
@@ -33,6 +33,7 @@ function Header() {
     const heavyhj = () => {
         dispatch(heavy())
     };
+
     useEffect(() => {
         dispatch(Temeperament())
     }, []);
