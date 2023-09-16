@@ -1,28 +1,4 @@
 
-
-.minbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 17px;
-  text-align: center;
-  /* Centra el contenido de manera horizontal */
-  padding-left: 30px;
-  padding-right: 30px;
-  border: 1px solid #dddcdc;
-  /* Añade un borde para visualización */
-  border-radius: 10px;
-  width: 60rem;
-  max-width: 80%;
-  /* Limita el ancho máximo para hacerlo responsive */
-  background-color: rgba(255, 255, 255, 0.8);
-  min-height: 58px;
-  max-height: 150px;
-  position: fixed;
-  z-index: 2;
-}
-
 .buttonHeader {
   border: 1px solid #b8b7b7;
   border-top-right-radius: 15px;

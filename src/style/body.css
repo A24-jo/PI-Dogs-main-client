@@ -14,7 +14,7 @@
     max-width: 96%; /* Limita el ancho máximo para hacerlo responsive */
     background-color: #e7e7e7;
     min-height: 80vh;
-    margin-top: 4rem;
+    margin-top: -4rem;
     margin-bottom: 40px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.425);
 }

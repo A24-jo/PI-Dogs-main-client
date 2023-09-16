@@ -76,9 +76,32 @@ function Header() {
         height: '73vh',
         width: '100%',
       };
+      const minboxStyles = {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: '17px',
+        textAlign: 'center',
+        /* Centra el contenido de manera horizontal */
+        paddingLeft: '30px',
+        paddingRight: '30px',
+        border: '1px solid #dddcdc',
+        /* Añade un borde para visualización */
+        borderRadius: '10px',
+        width: '60rem',
+        maxWidth: '80%',
+        /* Limita el ancho máximo para hacerlo responsive */
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        minHeight: '58px',
+        maxHeight: '150px',
+        position: 'fixed',
+        zIndex: 2,
+      };
+      
     return (
         <div style={boxHeaderStyle} >
-            <div className='minbox'>
+            <div style={minboxStyles}>
                 <div >
                     <div className={listen ? 'listening' : 'not-listening'} onClick={() => funtio()}>
                         <img src={microfono} alt="Microfono" className="microfono-img" />
