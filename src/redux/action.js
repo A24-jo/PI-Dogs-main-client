@@ -1,3 +1,5 @@
+import axios from 'axios';
+axios.defaults.baseURL='http://localhost:3001';
 export const ADD_BREED = 'ADD_BREED';
 export const DETAIL_BREED = 'DETAIL_BREED';
 export const SEARCH_INPUT = 'SEARCH_INPUT';
@@ -13,54 +15,49 @@ export const NEWDOGS = 'NEWDOGS';
 
 export const addBreed = () => {
     return async function (dispatch) {
-        try {
-            const data = await fetch('http://localhost:3001/dogs');
-            // console.log(data.ok)
-            if (!data.ok) throw Error('action addBreed:recarga la pagina')
-            const resul = await data.json();
-            dispatch({ type: ADD_BREED, payload: resul });
-        } catch (error) {
-            console.error({ error: error.message });
-            window.location.reload();
-        }
-    }
-};
+      try {
+        const response = await axios.get('/dogs');
+        if (!response.data) throw Error('action addBreed: recarga la pagina');
+        dispatch({ type: ADD_BREED, payload: response.data });
+      } catch (error) {
+        console.error({ error: error.message });
+        window.location.reload();
+      }
+    };
+  };
+  
 
-export const DetailBreed = (id) => {
+  export const DetailBreed = (id) => {
     return async function (dispatch) {
-        try {
-            const data = await fetch(`http://localhost:3001/dogs/${id}`);
-            if (!data.ok) throw Error('action Detail: Failed to fetch')
-            const datos = await data.json();
-            dispatch({ type: DETAIL_BREED, payload: datos });
-        } catch (error) {
-            console.error({ error: error.message });
-
-        }
-    }
-};
-export const searchInput = (name) => {
+      try {
+        const response = await axios.get(`/dogs/${id}`);
+        if (!response.data) throw Error('action Detail: Failed to fetch');
+        dispatch({ type: DETAIL_BREED, payload: response.data });
+      } catch (error) {
+        console.error({ error: error.message });
+      }
+    };
+  };
+  export const searchInput = (name) => {
     return async function (dispatch) {
-        try {
-            const data = await fetch(`http://localhost:3001/dogs/name?name=${name}`);
-            const result = await data.json();
-            dispatch({ type: SEARCH_INPUT, payload: result });
-        } catch (error) {
-            console.log({ error: error.message });
-        }
-    }
-};
-export const Temeperament = () => {
+      try {
+        const response = await axios.get(`/dogs/name?name=${name}`);
+        dispatch({ type: SEARCH_INPUT, payload: response.data });
+      } catch (error) {
+        console.log({ error: error.message });
+      }
+    };
+  };
+  export const Temeperament = () => {
     return async function (dispatch) {
-        try {
-            const data = await fetch(`http://localhost:3001/temperaments`);
-            const result = await data.json();
-            dispatch({ type: TEMPERAMENT, payload: result });
-        } catch (error) {
-            console.log({ error: error.message });
-        }
-    }
-};
+      try {
+        const response = await axios.get('/temperaments');
+        dispatch({ type: TEMPERAMENT, payload: response.data });
+      } catch (error) {
+        console.log({ error: error.message });
+      }
+    };
+  };
 export const filtradoTeperament = (raza) => {
     return { type: FILTRARTEMP, payload: raza };
 };
@@ -84,24 +81,14 @@ export const heavy = () => {
 };
 export const newBeeds = (obj) => {
     return async function (dispatch) {
-        try {
-            let eldast= JSON.stringify(obj);
-            const data = await fetch(`http://localhost:3001/dogs`, {
-                method: 'POST',
-                headers: {'content-type': 'application/json'},
-                body: eldast 
-            });
-            const resul = await data.json();
-            dispatch({ type: NEWDOGS, payload: resul });
-        } catch (error) {
-             console.error({error: error.message});
-        }
-
-    } 
-};
-
-
-    // const data = await fetch(`http://localhost:3001/temperaments`,{
-    //             method:'POST',
-    //             body:JSON.stringify({})
-    //         });
+      try {
+        let eldast = JSON.stringify(obj);
+        const response = await axios.post(`/dogs`, eldast, {
+          headers: { 'content-type': 'application/json' },
+        });
+        dispatch({ type: NEWDOGS, payload: response.data });
+      } catch (error) {
+        console.error({ error: error.message });
+      }
+    };
+  };

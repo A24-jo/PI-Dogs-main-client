@@ -1,12 +1,10 @@
 .boxheader {
-  display: flex;
-  justify-content: center;
-  /* Centra horizontalmente */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.5)), url('../img/534645.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 73vh;
-  width: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.5)),
+                url('../img/534645.jpg') center/cover;
+    height: 73vh;
+    width: 100%;
 }
 
 .minbox {
