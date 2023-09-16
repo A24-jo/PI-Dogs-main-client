@@ -1,4 +1,6 @@
-
+.homes{
+  background-color: #00000000;
+}
 .buttonHeader {
   border: 1px solid #b8b7b7;
   border-top-right-radius: 15px;

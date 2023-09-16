@@ -102,7 +102,7 @@ function Header() {
     return (
         <div style={boxHeaderStyle} >
             <div style={minboxStyles}>
-                <div >
+                <div className='homes'>
                     <div className={listen ? 'listening' : 'not-listening'} onClick={() => funtio()}>
                         <img src={microfono} alt="Microfono" className="microfono-img" />
                     </div>
