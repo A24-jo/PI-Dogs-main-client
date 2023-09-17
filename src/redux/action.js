@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL='http://localhost:3001';
+axios.defaults.baseURL='https://proyecto-perros-8g26.onrender.com';
 export const ADD_BREED = 'ADD_BREED';
 export const DETAIL_BREED = 'DETAIL_BREED';
 export const SEARCH_INPUT = 'SEARCH_INPUT';
